@@ -22,6 +22,6 @@
             <ComboBoxItem Content="比尔吉沃特"/>
         </ComboBox>
         <Label Content="Label" HorizontalAlignment="Left" Margin="407,21,0,0" VerticalAlignment="Top" Name="lblMsg"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="82,87,0,0" VerticalAlignment="Top" Width="100" Name="imgPlayerIcon"/>
+        <Image HorizontalAlignment="Left" Height="64" Margin="82,87,0,0" VerticalAlignment="Top" Width="64" Name="imgPlayerIcon"/>
     </Grid>
 </Controls:MetroWindow>

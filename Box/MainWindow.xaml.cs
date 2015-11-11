@@ -135,11 +135,8 @@ namespace Box
             string playerIcon = "";
             string first_win = "";
 
-            //StringReader sr = new StringReader(GetWebpage(url));
-            //HtmlAgilityPack.HtmlDocument htmlDocument = new HtmlAgilityPack.HtmlDocument();
             var getHtmlWeb = new HtmlWeb();
             var htmlDocument = getHtmlWeb.Load(url);
-            //htmlDocument.Load(url);
             HtmlNode bodyNode = htmlDocument.DocumentNode.SelectSingleNode("//body");
 
             //战斗力 : update_datetime, fighting
