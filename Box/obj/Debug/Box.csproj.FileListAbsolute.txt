@@ -20,7 +20,6 @@
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\bin\Debug\HtmlAgilityPack.dll
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\bin\Debug\HtmlAgilityPack.pdb
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\bin\Debug\HtmlAgilityPack.xml
-\\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\obj\Debug\Box.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\obj\Debug\MainWindow.baml
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\obj\Debug\MainWindow.g.cs
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\obj\Debug\App.g.cs
@@ -32,3 +31,4 @@
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\bin\Debug\System.Windows.Interactivity.dll
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\bin\Debug\MahApps.Metro.xml
 \\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\obj\Debug\App.baml
+\\Mac\Home\Documents\Visual Studio 2013\Projects\Box\Box\bin\Debug\Box.exe.config

@@ -16,12 +16,53 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="202,20,0,0" TextWrapping="Wrap" Text="我不是个善良的人" VerticalAlignment="Top" Width="120" Name="txtPlayerId"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="327,21,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="82,20,0,0" VerticalAlignment="Top" Width="120" Name="dpServer">
-            <ComboBoxItem Content="比尔吉沃特"/>
-        </ComboBox>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="407,21,0,0" VerticalAlignment="Top" Name="lblMsg"/>
-        <Image HorizontalAlignment="Left" Height="64" Margin="82,87,0,0" VerticalAlignment="Top" Width="64" Name="imgPlayerIcon"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="0,16,0,0" TextWrapping="Wrap" Text="我不是个善良的人" 
+                     VerticalAlignment="Top" Width="120" x:Name="txtPlayerId" Grid.Column="0"/>
+            <ComboBox HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Width="120" x:Name="dpServer" Grid.Column="1">
+                <ComboBoxItem Content="比尔吉沃特"/>
+            </ComboBox>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Grid.Column="2" Width="75" Click="Button_Click"/>
+            <Label Content="" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" x:Name="lblMsg" Grid.Column="3"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Image HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="64" x:Name="imgPlayerIcon" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="30" VerticalAlignment="Bottom" Name="lblLevel" Grid.Row="0" Grid.Column="1"></Label>
+            <Label Content="我不是个善良的人" VerticalAlignment="Bottom" Name="lblPlayerId" Grid.Row="0" Grid.Column="2" Width="auto"/>
+            <Grid Grid.Column="3" Name="gComChamp">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+
     </Grid>
 </Controls:MetroWindow>

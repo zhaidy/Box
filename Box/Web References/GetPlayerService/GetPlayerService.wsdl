@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="server" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayerProfileResult" type="tns:player_profile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="player_profile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="player_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="server" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="icon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="level" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fighting" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="first_win" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="com_champ" type="tns:ArrayOfCom_champ" />
+          <s:element minOccurs="0" maxOccurs="1" name="normal_statistics_list" type="tns:ArrayOfNormal_statistics" />
+          <s:element minOccurs="0" maxOccurs="1" name="rank_statistics_list" type="tns:ArrayOfRank_statistics" />
+          <s:element minOccurs="0" maxOccurs="1" name="played_champs_display_list" type="tns:ArrayOfPlayed_champs_display" />
+          <s:element minOccurs="0" maxOccurs="1" name="match_list_list" type="tns:ArrayOfMatch_list" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCom_champ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="com_champ" nillable="true" type="tns:com_champ" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="com_champ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="champion_name_ch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="champion_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="icon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="count" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNormal_statistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="normal_statistics" nillable="true" type="tns:normal_statistics" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="normal_statistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total_matches" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="win_rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matches_winned" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matches_lost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="update_datetime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRank_statistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="rank_statistics" nillable="true" type="tns:rank_statistics" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="rank_statistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rank" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="point" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="total_matches" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="win_rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matches_winned" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matches_lost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="update_datetime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlayed_champs_display">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="played_champs_display" nillable="true" type="tns:played_champs_display" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="played_champs_display">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="icon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="championName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="championNameCN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="winRate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matchStat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="averageKDA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="averageKDARating" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="averageDamage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="averageEarn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="averageMinionsKilled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalMVP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalHope" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatch_list">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="match_list" nillable="true" type="tns:match_list" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="match_list">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="playerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="champion_name_ch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="icon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getMatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMatchResult" type="tns:match" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="match">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="matchId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kills" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gold" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="match_details_win" type="tns:ArrayOfMatchDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="match_details_lost" type="tns:ArrayOfMatchDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatchDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="matchDetails" nillable="true" type="tns:matchDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="matchDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="matchId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="playerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gold" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KDA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="champion_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="champion_name_ch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="champIcon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstSpellIcon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="secondSpellIcon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="warScore" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastHits" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="creeps" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="towersDestroyed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="barracksDestroyed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="wards" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dewards" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maxContKills" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maxMultiKills" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maxCrit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalHeal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalDmg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalTank" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalHeroDmg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalHeroPhyDmg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalHeroMagicDmg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalHeroTrueDmg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="items_list" type="tns:ArrayOfItems" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItems">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="items" nillable="true" type="tns:items" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="items">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="playerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matchId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemIcon7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemDesc7" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerProfile" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMatchSoapIn">
+    <wsdl:part name="parameters" element="tns:getMatch" />
+  </wsdl:message>
+  <wsdl:message name="getMatchSoapOut">
+    <wsdl:part name="parameters" element="tns:getMatchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GetPlayerServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerProfile">
+      <wsdl:input message="tns:GetPlayerProfileSoapIn" />
+      <wsdl:output message="tns:GetPlayerProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMatch">
+      <wsdl:input message="tns:getMatchSoapIn" />
+      <wsdl:output message="tns:getMatchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetPlayerServiceSoap" type="tns:GetPlayerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerProfile">
+      <soap:operation soapAction="http://tempuri.org/GetPlayerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatch">
+      <soap:operation soapAction="http://tempuri.org/getMatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GetPlayerServiceSoap12" type="tns:GetPlayerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerProfile">
+      <soap12:operation soapAction="http://tempuri.org/GetPlayerProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatch">
+      <soap12:operation soapAction="http://tempuri.org/getMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetPlayerService">
+    <wsdl:port name="GetPlayerServiceSoap" binding="tns:GetPlayerServiceSoap">
+      <soap:address location="http://naffaell.azurewebsites.net/GetPlayerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GetPlayerServiceSoap12" binding="tns:GetPlayerServiceSoap12">
+      <soap12:address location="http://naffaell.azurewebsites.net/GetPlayerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
