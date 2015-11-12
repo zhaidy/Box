@@ -49,8 +49,8 @@ namespace Box
             for (int i = 0; i < result.com_champ.Length; i++)
             {
                 Image img = new Image();
-                img.Height = 24;
-                img.Width = 24;
+                img.Height = 40;
+                img.Width = 40;
                 img.Source = icon(result.com_champ[i].icon);
                 Grid.SetColumn(img, i);
                 gComChamp.Children.Add(img);

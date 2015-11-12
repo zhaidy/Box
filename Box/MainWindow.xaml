@@ -15,7 +15,7 @@
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-    <Grid>
+    <Grid Margin="30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -51,8 +51,8 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Image HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="64" x:Name="imgPlayerIcon" Grid.Row="0" Grid.Column="0"/>
-            <Label Content="30" VerticalAlignment="Bottom" Name="lblLevel" Grid.Row="0" Grid.Column="1"></Label>
-            <Label Content="我不是个善良的人" VerticalAlignment="Bottom" Name="lblPlayerId" Grid.Row="0" Grid.Column="2" Width="auto"/>
+            <Label Content="Level" VerticalAlignment="Bottom" Name="lblLevel" Grid.Row="0" Grid.Column="1"></Label>
+            <Label Content="PlayerId" VerticalAlignment="Bottom" Name="lblPlayerId" Grid.Row="0" Grid.Column="2" Width="auto"/>
             <Grid Grid.Column="3" Name="gComChamp">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -63,6 +63,5 @@
                 </Grid.ColumnDefinitions>
             </Grid>
         </Grid>
-
     </Grid>
 </Controls:MetroWindow>
